@@ -4,10 +4,10 @@ ENV NODE_ENV=production
 
 WORKDIR /usr/src/app
 
-COPY yarn.lock ./
+COPY package.json ./
 
+RUN yarn global add @nestjs/cli
 RUN yarn install --frozen-lockfile
-RUN yarn global add rimraf @nestjs/cli
 COPY . .
 RUN yarn build
 
