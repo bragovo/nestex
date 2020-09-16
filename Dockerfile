@@ -7,6 +7,7 @@ WORKDIR /usr/src/app
 COPY yarn.lock ./
 
 RUN yarn install --frozen-lockfile
+RUN yarn global add rimraf @nestjs/cli
 COPY . .
 RUN yarn build
 
